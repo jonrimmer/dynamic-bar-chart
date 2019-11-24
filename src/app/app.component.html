@@ -1,0 +1,32 @@
+<ng-container [ngSwitch]="location.path()">
+  <ng-container *ngSwitchCase="'/demo'">
+    <app-demo></app-demo>
+  </ng-container>
+  <ng-container *ngSwitchDefault>
+    <form id="repos" (submit)="addRepo()">
+      <label>
+        Add repo:
+      </label>
+      <input
+        type="text"
+        name="repo"
+        [(ngModel)]="repo"
+        placeholder="user/repo"
+      />
+
+      <button
+        type="button"
+        (click)="removeRepo(i)"
+        *ngFor="let categories of categories; index as i"
+      >
+        {{ categories.label }}
+      </button>
+    </form>
+
+    <app-charts-container
+      id="charts"
+      [categories]="categories"
+      [series]="series"
+    ></app-charts-container>
+  </ng-container>
+</ng-container>
