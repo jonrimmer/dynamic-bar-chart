@@ -7,7 +7,7 @@
 
 #repos {
   background-color: rebeccapurple;
-  color: #FFF;
+  color: #fff;
 
   grid-area: 1 / 1;
   display: grid;
@@ -24,24 +24,27 @@
   }
 }
 
-input {
+input[type='text'] {
   padding: 4px 8px;
   font-size: 12px;
-  margin-right: 16px;
-  background-color: rgba(0,0,0,.8);
-  color: #FFF;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
   border: 0;
 
   &::placeholder {
-    color: rgba(255,255,255,.5);
+    color: rgba(255, 255, 255, 0.5);
   }
+}
+
+.fake {
+  margin-right: 16px;
 }
 
 button {
   display: flex;
   border: 0;
-  background: rgba(255,255,255,.15);
-  color: #FFF;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
   border-radius: 3px;
   padding: 0 12px;
   align-items: center;
@@ -57,4 +60,9 @@ button {
 #charts {
   flex: 1;
   margin: 24px;
+}
+
+.rate-limit {
+  align-self: center;
+  margin-left: 1rem;
 }

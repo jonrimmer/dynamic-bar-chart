@@ -1,5 +1,5 @@
 <ng-container [ngSwitch]="location.path()">
-  <ng-container *ngSwitchCase="'/demo'">
+  <ng-container *ngSwitchCase="'/dynamic-bar-chart/demo'">
     <app-demo></app-demo>
   </ng-container>
   <ng-container *ngSwitchDefault>
@@ -7,13 +7,12 @@
       <label>
         Add repo:
       </label>
-      <input
-        type="text"
-        name="repo"
-        [(ngModel)]="repo"
-        placeholder="user/repo"
-      />
+      <input type="text" name="repo" [(ngModel)]="repo" placeholder="org/repo" />
 
+      <label class="fake">
+        <input name="fake" type="checkbox" [(ngModel)]="fakeData" />
+        Fake data</label
+      >
       <button
         type="button"
         (click)="removeRepo(i)"
@@ -21,6 +20,7 @@
       >
         {{ categories.label }}
       </button>
+      <span class="rate-limit">{{ rateLimit }}</span>
     </form>
 
     <app-charts-container
